@@ -1,0 +1,11 @@
+Program:
+%{
+int positive no = 0, negative no = 0;
+%}	
+%%
+^[-][0-9]+ {negative no++;
+			printf("negative number = %s\n",yytext);} 
+[0-9]+ {positive no++;
+		printf("positive number = %s\n",yytext);}	
+%%
+int yywrap(){}
